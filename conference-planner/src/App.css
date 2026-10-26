@@ -1,0 +1,617 @@
+/* ==========================================================================
+   Conference Expense Planner Stylesheet
+   ========================================================================== */
+
+/* Main App Wrapper */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Landing Page (About Us)
+   ========================================================================== */
+.landing-page {
+  min-height: 100vh;
+  width: 100%;
+  background: 
+    linear-gradient(rgba(10, 25, 45, 0.72), rgba(10, 25, 45, 0.82)),
+    url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.landing-overlay {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.landing-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.5rem;
+}
+
+@media (max-width: 900px) {
+  .landing-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+}
+
+.landing-left {
+  flex: 1;
+  color: #ffffff;
+}
+
+.landing-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+}
+
+.landing-subtitle {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #e2e8f0;
+  margin-bottom: 2.2rem;
+}
+
+.get-started-btn {
+  background-color: #f1aa38;
+  color: #0f172a;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0.85rem 2.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px rgba(241, 170, 56, 0.35);
+}
+
+.get-started-btn:hover {
+  background-color: #df9828;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(241, 170, 56, 0.45);
+}
+
+.get-started-btn:active {
+  transform: translateY(0);
+}
+
+.landing-right {
+  flex: 1.1;
+}
+
+.aboutus-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 2.5rem;
+  color: #f8fafc;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.aboutus-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  color: #e2e8f0;
+}
+
+.aboutus-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.conference-event-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #102a45;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 2.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  user-select: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #f1aa38;
+}
+
+.show-details-btn {
+  background-color: #f1aa38;
+  color: #0f172a;
+  border: none;
+  border-radius: 5px;
+  padding: 0.55rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.show-details-btn:hover {
+  background-color: #df9828;
+}
+
+/* ==========================================================================
+   Main Content & Section Blocks
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+
+.section-block {
+  margin-bottom: 3.5rem;
+}
+
+.section-header-banner {
+  background-color: #163b65;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(22, 59, 101, 0.2);
+}
+
+.section-header-banner h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.4px;
+}
+
+/* ==========================================================================
+   Product Cards Grid (Venue & Add-ons)
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card-image-wrap {
+  width: 100%;
+  height: 125px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-image {
+  transform: scale(1.04);
+}
+
+.card-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-capacity {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+}
+
+.card-cost {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #102a45;
+  margin-bottom: 0.85rem;
+}
+
+.card-quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn-counter {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4ba3e3;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-counter:hover:not(:disabled) {
+  background-color: #3182ce;
+}
+
+.btn-counter:disabled {
+  background-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.quantity-number {
+  min-width: 26px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Subtotal Pill
+   ========================================================================== */
+.subtotal-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.subtotal-pill {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.75rem 2.8rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   Meals Selection Section
+   ========================================================================== */
+.meals-section-block {
+  margin-bottom: 2rem;
+}
+
+.meals-content-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.people-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.people-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.people-input {
+  width: 90px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  text-align: center;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.people-input:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.meals-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem 3.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 540px) {
+  .meals-options-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+.meal-option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #2563eb;
+  cursor: pointer;
+  margin-right: 0.75rem;
+}
+
+.meal-label-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.meal-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #334155;
+  margin-left: 1rem;
+}
+
+/* ==========================================================================
+   Show Details Modal Popup
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1.5rem;
+}
+
+.modal-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  max-width: 780px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 2.5rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  color: #0f172a;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #475569;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.modal-total-cost {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.details-table thead th {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.details-table thead th:nth-child(2),
+.details-table thead th:nth-child(3),
+.details-table thead th:nth-child(4) {
+  text-align: right;
+}
+
+.details-table tbody td {
+  padding: 0.95rem 1.2rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.98rem;
+  color: #334155;
+}
+
+.details-table tbody td:nth-child(2),
+.details-table tbody td:nth-child(3),
+.details-table tbody td:nth-child(4) {
+  text-align: right;
+}
+
+.details-table .item-name {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.details-table .item-subtotal {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.no-items-msg {
+  text-align: center !important;
+  padding: 2.5rem 1rem !important;
+  color: #64748b !important;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-btn-close {
+  background-color: #102a45;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-btn-close:hover {
+  background-color: #163b65;
+}
+

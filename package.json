@@ -1,0 +1,8 @@
+{
+  "name": "react-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix conference-planner run dev",
+    "build": "npm --prefix conference-planner run build"
+  }
+}
